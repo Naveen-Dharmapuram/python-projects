@@ -15,8 +15,10 @@ variables :
 jobs:
 - job: FirstJob
   displayName: 'First Job'
+  variables:
+    solution: 'test.sln'
   steps:
-  - script: echo This is the first job
+  - script: echo This is the first job with variable as $(solution) and global variable as $(build)
     displayName: 'Step 1 of First Job'
 
 - job: SecondJob
