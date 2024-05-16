@@ -7,8 +7,6 @@ pool:
 jobs:
 - job: FirstJob
   displayName: 'First Job'
-  strategy:
-    maxParallel: 3
   steps:
   - script: echo This is the first job
     displayName: 'Step 1 of First Job'
@@ -16,7 +14,7 @@ jobs:
 - job: SecondJob
   displayName: 'Second Job'
   strategy:
-    maxParallel: 3
+    maxParallel: 2
   steps:
   - script: echo This is the second job
     displayName: 'Step 1 of Second Job'
