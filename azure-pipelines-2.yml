@@ -1,3 +1,4 @@
+
 trigger:
 - main
 
@@ -6,6 +7,15 @@ pool:
   # demands:
   # - Python -equals 3.8.3
 
+parameters:
+  - name: environment
+    displayName: Enviroment to run
+    type: string
+    default: 'simulation'
+    values:
+      - simulation
+      - hardware
+      - FPGA
 variables :
   build: 'release'
   release: 3.8
