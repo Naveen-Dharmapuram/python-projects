@@ -4,7 +4,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   demands:
-  - Python -equals 3.8
+  - Python -equals 3.8.3
 
 jobs:
 - job: FirstJob
@@ -26,6 +26,7 @@ jobs:
 
 - job: ThirdJob
   displayName: 'Third Job'
+  dependsOn: SecondJob
   strategy:
     maxParallel: 3
   steps:
