@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   demands:
-   - Python 
+   - Python -equals 3.6
 strategy:
   matrix:
     Python27:
