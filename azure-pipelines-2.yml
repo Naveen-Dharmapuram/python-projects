@@ -6,6 +6,12 @@ pool:
   # demands:
   # - Python -equals 3.8.3
 
+variables :
+  build: 'release'
+  release: 3.8
+
+
+
 jobs:
 - job: FirstJob
   displayName: 'First Job'
