@@ -7,6 +7,8 @@ pool:
 jobs:
 - job: FirstJob
   displayName: 'First Job'
+  strategy:
+    maxParallel: 3
   steps:
   - script: echo This is the first job
     displayName: 'Step 1 of First Job'
