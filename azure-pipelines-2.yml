@@ -16,9 +16,21 @@ parameters:
       - simulation
       - hardware
       - FPGA
+
+  - name: selectedEnvironments
+    displayName: 'Select Environments to Deploy'
+    type: string
+    default: 'Development'
+    values:
+    - 'Development'
+    - 'Staging'
+    - 'Production'
+
 variables :
   build: 'release'
   release: 3.8
+
+
 
 
 
