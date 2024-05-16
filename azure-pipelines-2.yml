@@ -3,8 +3,8 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  demands:
-  - Python -equals 3.8.3
+  # demands:
+  # - Python -equals 3.8.3
 
 jobs:
 - job: FirstJob
@@ -22,7 +22,7 @@ jobs:
     displayName: 'Step 1 of Second Job'
   - script: echo This is the second job, step 2
     displayName: 'Step 2 of Second Job'
-  - task: PythonScript@0
+  # - task: PythonScript@0
 
 - job: ThirdJob
   displayName: 'Third Job'
