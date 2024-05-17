@@ -72,3 +72,14 @@ jobs:
     displayName: 'Step 2 of Third Job'
   - script: echo This is the third job, step 3
     displayName: 'Step 3 of Third Job'
+
+- job: TestJob
+  displayName: 'Test Job'
+  strategy:
+    matrix:
+      Python27:
+        pythonVersion: '2.7'
+      Python38:
+        pythonVersion: '3.8'
+  steps:
+  - script: echo "Running tests with Python $(pythonVersion)"
