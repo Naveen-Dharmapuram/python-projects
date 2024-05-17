@@ -52,6 +52,12 @@ jobs:
     displayName: 'Step 1 of Second Job'
   - script: echo This is the second job, step 2
     displayName: 'Step 2 of Second Job'
+  - task: CmdLine@2
+    inputs:
+      script: |
+        echo Write your commands here
+        
+        echo Hello world
   # - task: PythonScript@0
 
 - job: ThirdJob
