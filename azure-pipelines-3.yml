@@ -1,0 +1,38 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: Build
+  displayName: 'Build and Test'
+  strategy:
+    matrix:
+      linux_node12:
+        imageName: 'ubuntu-latest'
+        node_version: '12.x'
+      linux_node14:
+        imageName: 'ubuntu-latest'
+        node_version: '14.x'
+      windows_node12:
+        imageName: 'windows-latest'
+        node_version: '12.x'
+      windows_node14:
+        imageName: 'windows-latest'
+        node_version: '14.x'
+  pool:
+    vmImage: $(imageName)
+  steps:
+  - task: UseNode@1
+    inputs:
+      version: '$(node_version)'
+      checkLatest: true
+  - script: |
+      echo "Node version:"
+      node -v
+      echo "Installing dependencies..."
+      npm install
+      echo "Running tests..."
+      npm test
+    displayName: 'Install dependencies and run tests'
