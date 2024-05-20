@@ -12,15 +12,19 @@ jobs:
       linux_node12:
         imageName: 'ubuntu-latest'
         node_version: '12.x'
+        python_version: '3.x'
       linux_node14:
         imageName: 'ubuntu-latest'
         node_version: '14.x'
+        python_version: '3.x'
       windows_node12:
         imageName: 'windows-latest'
         node_version: '12.x'
+        python_version: '3.x'
       windows_node14:
         imageName: 'windows-latest'
         node_version: '14.x'
+        python_version: '3.x'
   pool:
     vmImage: $(imageName)
   steps:
