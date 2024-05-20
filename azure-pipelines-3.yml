@@ -32,7 +32,13 @@ jobs:
     inputs:
       version: '$(node_version)'
       checkLatest: true
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python_version)'
+      addToPath: true
   - script: |
       echo "Node version:"
       node -v
+      echo "python verion"
+      python -v
     displayName: 'Install dependencies and run tests'
