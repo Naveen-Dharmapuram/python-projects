@@ -1,0 +1,12 @@
+trigger:
+- main
+
+jobs:
+- job: BuildJob
+  container: 'mcr.microsoft.com/dotnet/core/sdk:3.1'  # Use a .NET Core SDK container image
+
+  steps:
+  - script: echo "Running inside a container"
+    displayName: 'Show container message'
+  - script: dotnet build
+    displayName: 'Build project'
