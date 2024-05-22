@@ -6,6 +6,9 @@
 trigger:
 - main
 
+variables:
+- group: test_variable_group
+
 pool:
   vmImage: ubuntu-latest
 
@@ -16,4 +19,6 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    echo using variables in variable group
+    echo $(variable1)
   displayName: 'Run a multi-line script'
