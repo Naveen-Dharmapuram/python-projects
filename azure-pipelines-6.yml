@@ -22,3 +22,7 @@ steps:
     echo using variables in variable group
     echo $(variable1)
   displayName: 'Run a multi-line script'
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'Naveen_Kumar_Dharmapuram_DevOps_Automation_V2.docx'
